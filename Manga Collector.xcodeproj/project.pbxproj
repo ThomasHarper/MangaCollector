@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A662528C1DCBA6FA0066DDDD /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A662528B1DCBA6FA0066DDDD /* Logo.png */; };
+		A662528E1DCBA82A0066DDDD /* MangaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A662528D1DCBA82A0066DDDD /* MangaViewController.swift */; };
 		A6EC9FA21DCB9DE9005C8048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC9FA11DCB9DE9005C8048 /* AppDelegate.swift */; };
 		A6EC9FA41DCB9DE9005C8048 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC9FA31DCB9DE9005C8048 /* ViewController.swift */; };
 		A6EC9FA71DCB9DE9005C8048 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6EC9FA51DCB9DE9005C8048 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A662528B1DCBA6FA0066DDDD /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		A662528D1DCBA82A0066DDDD /* MangaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MangaViewController.swift; sourceTree = "<group>"; };
 		A6EC9F9E1DCB9DE9005C8048 /* Manga Collector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Manga Collector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6EC9FA11DCB9DE9005C8048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6EC9FA31DCB9DE9005C8048 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 		A6EC9FA01DCB9DE9005C8048 /* Manga Collector */ = {
 			isa = PBXGroup;
 			children = (
+				A662528B1DCBA6FA0066DDDD /* Logo.png */,
 				A6EC9FA11DCB9DE9005C8048 /* AppDelegate.swift */,
 				A6EC9FA31DCB9DE9005C8048 /* ViewController.swift */,
+				A662528D1DCBA82A0066DDDD /* MangaViewController.swift */,
 				A6EC9FA51DCB9DE9005C8048 /* Main.storyboard */,
 				A6EC9FAB1DCB9DE9005C8048 /* Assets.xcassets */,
 				A6EC9FAD1DCB9DE9005C8048 /* LaunchScreen.storyboard */,
@@ -127,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A662528C1DCBA6FA0066DDDD /* Logo.png in Resources */,
 				A6EC9FAF1DCB9DE9005C8048 /* LaunchScreen.storyboard in Resources */,
 				A6EC9FAC1DCB9DE9005C8048 /* Assets.xcassets in Resources */,
 				A6EC9FA71DCB9DE9005C8048 /* Main.storyboard in Resources */,
@@ -143,6 +150,7 @@
 				A6EC9FA41DCB9DE9005C8048 /* ViewController.swift in Sources */,
 				A6EC9FAA1DCB9DE9005C8048 /* Manga_Collector.xcdatamodeld in Sources */,
 				A6EC9FA21DCB9DE9005C8048 /* AppDelegate.swift in Sources */,
+				A662528E1DCBA82A0066DDDD /* MangaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +314,7 @@
 				A6EC9FB51DCB9DE9005C8048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
