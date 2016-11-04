@@ -44,6 +44,14 @@ class MangaViewController: UIViewController, UIImagePickerControllerDelegate,UIN
     }
     
     @IBAction func addTapped(_ sender: AnyObject) {
+        // Creating the context in order to save to coreData
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        // Assigning context to our Manga generated class and saving data from the inputs
+        let manga = Manga(context: context)
+        manga.title = titleTextField.text
+        manga.image = UIImagePNGRepresentation(mangaImageView.image!) as NSData?
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     override func didReceiveMemoryWarning() {
