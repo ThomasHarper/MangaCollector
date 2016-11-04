@@ -41,11 +41,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        
         let manga = mangas[indexPath.row]
+        
+        // adding data to the cell
         cell.textLabel?.text = manga.title
         cell.imageView?.image = UIImage(data: manga.image as! Data)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Selecting the righ row and passing it to the segue
+        let manga = mangas[indexPath.row]
+        performSegue(withIdentifier: "mangaSegue", sender: manga)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Setting the destination of the segue
+        let nextVC = segue.destination as! MangaViewController
+        
+        // Setting MangaViewController manga property
+        nextVC.manga = sender as? Manga
     }
 
     override func didReceiveMemoryWarning() {
