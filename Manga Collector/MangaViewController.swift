@@ -55,13 +55,33 @@ class MangaViewController: UIViewController, UIImagePickerControllerDelegate,UIN
     }
     
     @IBAction func addTapped(_ sender: AnyObject) {
-        // Creating the context in order to save to coreData
+        // Updating manga instead of adding a copy of an existing one when user taps on update
+        if manga != nil {
+            manga!.title = titleTextField.text
+            manga!.image = UIImagePNGRepresentation(mangaImageView.image!) as NSData?
+        }
+         // Assigning context to our Manga generated class and saving data from the inputs
+        else {
+            // Creating the context in order to save to coreData
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let manga = Manga(context: context)
+            manga.title = titleTextField.text
+            manga.image = UIImagePNGRepresentation(mangaImageView.image!) as NSData?
+        }
+        
+        // Saving data and going back to previous controller
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+    }
+    
+    @IBAction func deleteTapped(_ sender: AnyObject) {
+        // Creating the context in order to save deletion to coreData
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        // Assigning context to our Manga generated class and saving data from the inputs
-        let manga = Manga(context: context)
-        manga.title = titleTextField.text
-        manga.image = UIImagePNGRepresentation(mangaImageView.image!) as NSData?
+        // Deleting the manga
+        context.delete(manga!)
+        
+        // Saving context and going back to previous controller
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }

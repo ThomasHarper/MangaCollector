@@ -77,6 +77,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1E-vg-ZZw">
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteTapped:" destination="hZa-zZ-i14" eventType="touchUpInside" id="PxP-nW-d1j"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
