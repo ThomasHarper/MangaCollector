@@ -34,6 +34,10 @@ class MangaViewController: UIViewController, UIImagePickerControllerDelegate,UIN
     }
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
+        // Telling the UIImagePickerController that we need to use the camera
+        imagePicker.sourceType = .camera
+        // Then show this UIImagePickerController to the user
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func photosTapped(_ sender: AnyObject) {
