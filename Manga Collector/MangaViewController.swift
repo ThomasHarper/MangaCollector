@@ -52,6 +52,7 @@ class MangaViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         manga.title = titleTextField.text
         manga.image = UIImagePNGRepresentation(mangaImageView.image!) as NSData?
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
