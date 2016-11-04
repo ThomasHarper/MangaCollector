@@ -22,11 +22,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // Creating context
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
+        // Fetching mangas and refreshing tableView data
         do {
             mangas = try context.fetch(Manga.fetchRequest())
-            print(mangas)
+            tableView.reloadData()
         } catch {
             print("There's an error there when fetching the mangas!")
         }
@@ -42,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let manga = mangas[indexPath.row]
         cell.textLabel?.text = manga.title
-        
+        cell.imageView?.image = UIImage(data: manga.image as! Data)
         return cell
     }
 
