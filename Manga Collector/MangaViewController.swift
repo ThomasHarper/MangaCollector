@@ -32,6 +32,17 @@ class MangaViewController: UIViewController, UIImagePickerControllerDelegate,UIN
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        // The image the user selected in his library
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Setting image the user selected as the image of the imageView
+        mangaImageView.image = image
+        
+        // Dismissing the imagePicker
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addTapped(_ sender: AnyObject) {
     }
     
