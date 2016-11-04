@@ -8,11 +8,42 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    /////////////////// OUTLETS ////////////////////
+    @IBOutlet weak var tableView: UITableView!
+    ///////////////// PROPERTIES ///////////////////
+    var mangas : [Manga] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            mangas = try context.fetch(Manga.fetchRequest())
+            print(mangas)
+        } catch {
+            print("There's an error there when fetching the mangas!")
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mangas.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        let manga = mangas[indexPath.row]
+        cell.textLabel?.text = manga.title
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
