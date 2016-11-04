@@ -13,13 +13,24 @@ class MangaViewController: UIViewController, UIImagePickerControllerDelegate,UIN
     /////////////////// OUTLETS ////////////////////
     @IBOutlet weak var mangaImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var addUpdateButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     ///////////////// PROPERTIES ///////////////////
     var imagePicker = UIImagePickerController()
+    var manga : Manga? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imagePicker.delegate = self
+        
+        if manga != nil {
+            mangaImageView.image = UIImage(data: manga!.image as! Data)
+            titleTextField.text = manga!.title
+            addUpdateButton.setTitle("Update", for: .normal)
+        } else {
+            deleteButton.isHidden = true
+        }
     }
     
     @IBAction func cameraTapped(_ sender: AnyObject) {

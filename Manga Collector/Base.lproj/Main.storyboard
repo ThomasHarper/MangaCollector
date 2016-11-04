@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Manga_Collector" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="imF-xq-IhM">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="pti-hT-2tN">
                             <connections>
-                                <segue destination="hZa-zZ-i14" kind="show" id="iEW-Ah-WXr"/>
+                                <segue destination="hZa-zZ-i14" kind="show" identifier="mangaSegue" id="iEW-Ah-WXr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,16 +75,21 @@
                                     <action selector="addTapped:" destination="hZa-zZ-i14" eventType="touchUpInside" id="gx6-Vy-vs2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1E-vg-ZZw">
+                                <state key="normal" title="Delete"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5CD-IB-PWS" firstAttribute="top" secondItem="PhD-UG-8Oa" secondAttribute="bottom" constant="20" id="1iX-He-qGE"/>
+                            <constraint firstItem="D1E-vg-ZZw" firstAttribute="top" secondItem="5CD-IB-PWS" secondAttribute="bottom" constant="20" id="4MK-yH-RFO"/>
                             <constraint firstItem="4du-Yv-qxB" firstAttribute="centerX" secondItem="kdv-K5-bHI" secondAttribute="centerX" id="U2Q-uc-hYf"/>
                             <constraint firstItem="5CD-IB-PWS" firstAttribute="centerX" secondItem="kdv-K5-bHI" secondAttribute="centerX" id="e2a-3F-z8i"/>
                             <constraint firstItem="PhD-UG-8Oa" firstAttribute="centerX" secondItem="kdv-K5-bHI" secondAttribute="centerX" id="eLi-sf-cBu"/>
                             <constraint firstItem="PhD-UG-8Oa" firstAttribute="width" secondItem="4du-Yv-qxB" secondAttribute="width" id="iNC-vS-kmo"/>
                             <constraint firstItem="4du-Yv-qxB" firstAttribute="top" secondItem="B3h-cK-dLH" secondAttribute="bottom" constant="50" id="m5B-qY-2pU"/>
                             <constraint firstItem="PhD-UG-8Oa" firstAttribute="top" secondItem="4du-Yv-qxB" secondAttribute="bottom" constant="30" id="ppR-xR-a5F"/>
+                            <constraint firstItem="D1E-vg-ZZw" firstAttribute="centerX" secondItem="kdv-K5-bHI" secondAttribute="centerX" id="vOx-SF-feK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fe3-S1-FOY">
@@ -102,6 +107,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="5CD-IB-PWS" id="pWK-f7-OWq"/>
+                        <outlet property="deleteButton" destination="D1E-vg-ZZw" id="qKc-cA-UNI"/>
                         <outlet property="mangaImageView" destination="4du-Yv-qxB" id="ngo-qL-OZy"/>
                         <outlet property="titleTextField" destination="PhD-UG-8Oa" id="jBh-cR-czW"/>
                     </connections>
